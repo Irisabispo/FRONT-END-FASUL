@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrões de Projeto - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html" class="active"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">07</span>
+            <h2>Padrões de Projeto Front-end</h2>
+            <p>
+                Padrões de projeto são soluções comprovadas e amplamente utilizadas para
+                problemas recorrentes no desenvolvimento de software. Eles fornecem
+                diretrizes e abordagens para a criação de arquiteturas de software mais
+                eficientes, modularizadas e flexíveis.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-info-circle"></i> Introdução</h3>
+                <p>
+                    A aplicação de padrões de projeto adequados é fundamental para garantir
+                    a qualidade e a manutenibilidade do código, além de facilitar a evolução
+                    do sistema ao longo do tempo. Os padrões de projeto fornecem diretrizes
+                    e soluções comprovadas para problemas recorrentes no desenvolvimento de
+                    software.
+                </p>
+            </section>
+
+            <!-- MVC -->
+            <section class="content-section">
+                <h3><i class="fas fa-sitemap"></i> MVC - Model-View-Controller</h3>
+                <p>
+                    Um dos padrões de projeto mais comumente aplicados no front-end é o
+                    <strong>Model-View-Controller (MVC)</strong>, que separa a lógica de
+                    negócio, a apresentação e a interação do usuário em três componentes
+                    distintos. Essa separação permite uma melhor organização do código e
+                    facilita a manutenção, uma vez que as responsabilidades estão claramente
+                    definidas.
+                </p>
+                <div class="pattern-card">
+                    <div class="pattern-icon"><i class="fas fa-database"></i></div>
+                    <div class="pattern-content">
+                        <h4>Model</h4>
+                        <p>Representa os dados e a lógica de negócio</p>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon"><i class="fas fa-eye"></i></div>
+                    <div class="pattern-content">
+                        <h4>View</h4>
+                        <p>Responsável pela apresentação visual da interface</p>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon"><i class="fas fa-sliders-h"></i></div>
+                    <div class="pattern-content">
+                        <h4>Controller</h4>
+                        <p>Controla as interações entre o Model e o View</p>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Benefícios:</strong> A adoção do padrão MVC ajuda a separar as
+                        responsabilidades e torna o código mais modular e flexível, o que
+                        facilita a manutenção do sistema, uma vez que alterações em um
+                        componente não afetam diretamente os outros.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SINGLETON -->
+            <section class="content-section">
+                <h3><i class="fas fa-crown"></i> Singleton</h3>
+                <p>
+                    O padrão <strong>Singleton</strong> garante que apenas uma instância de
+                    uma determinada classe seja criada, permitindo o acesso global a essa
+                    instância. Esse padrão é útil em situações em que é necessário
+                    compartilhar dados ou recursos entre diferentes partes do sistema.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Singleton:</h4>
+                    <pre><code>class Configuracao {
+    constructor() {
+        if (Configuracao.instance) {
+            return Configuracao.instance;
+        }
+        this.configuracoes = {};
+        Configuracao.instance = this;
+    }
+
+    set(key, value) {
+        this.configuracoes[key] = value;
+    }
+
+    get(key) {
+        return this.configuracoes[key];
+    }
+}
+
+// Uso
+const config1 = new Configuracao();
+config1.set("tema", "escuro");
+
+const config2 = new Configuracao();
+console.log(config2.get("tema")); // "escuro" - mesma instância
+
+console.log(config1 === config2); // true</code></pre>
+                </div>
+            </section>
+
+            <!-- OBSERVER -->
+            <section class="content-section">
+                <h3><i class="fas fa-bell"></i> Observer</h3>
+                <p>
+                    O padrão <strong>Observer</strong> estabelece uma relação de dependência
+                    entre objetos, na qual um objeto, conhecido como Subject, mantém uma
+                    lista de outros objetos, conhecidos como Observers, e os notifica
+                    automaticamente sobre quaisquer mudanças de estado. Essa abordagem
+                    permite que os Observers reajam de acordo com as alterações do Subject.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Observer:</h4>
+                    <pre><code>// Subject (Observable)
+class EventManager {
+    constructor() {
+        this.listeners = {};
+    }
+
+    on(event, callback) {
+        if (!this.listeners[event]) {
+            this.listeners[event] = [];
+        }
+        this.listeners[event].push(callback);
+    }
+
+    emit(event, data) {
+        if (this.listeners[event]) {
+            this.listeners[event].forEach(callback => callback(data));
+        }
+    }
+}
+
+// Uso
+const eventos = new EventManager();
+
+// Observer 1
+eventos.on("usuario-login", (dados) => {
+    console.log("Usuário logado:", dados.nome);
+});
+
+// Observer 2
+eventos.on("usuario-login", (dados) => {
+    console.log("Enviando email para:", dados.email);
+});
+
+// Disparar evento
+eventos.emit("usuario-login", {
+    nome: "João",
+    email: "joao@email.com"
+});</code></pre>
+                </div>
+            </section>
+
+            <!-- FACTORY -->
+            <section class="content-section">
+                <h3><i class="fas fa-industry"></i> Factory Method</h3>
+                <p>
+                    O padrão <strong>Factory Method</strong> define uma interface para criar
+                    objetos, mas permite que as subclasses decidam qual classe concreta
+                    instanciar. Isso permite a criação de objetos de forma flexível e
+                    desacoplada, facilitando a manutenção e a evolução do sistema.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Factory Method:</h4>
+                    <pre><code>// Interface Product
+class Product {
+    getPrice() {
+        throw new Error("Método getPrice() deve ser implementado");
+    }
+}
+
+// Produtos concretos
+class Clothing extends Product {
+    getPrice() {
+        return 50;
+    }
+}
+
+class Electronic extends Product {
+    getPrice() {
+        return 500;
+    }
+}
+
+class Book extends Product {
+    getPrice() {
+        return 30;
+    }
+}
+
+// Factory
+class ProductFactory {
+    createProduct(type) {
+        switch (type) {
+            case "clothing":
+                return new Clothing();
+            case "electronic":
+                return new Electronic();
+            case "book":
+                return new Book();
+            default:
+                throw new Error("Tipo de produto inválido");
+        }
+    }
+}
+
+// Uso
+const factory = new ProductFactory();
+const camisa = factory.createProduct("clothing");
+console.log(camisa.getPrice()); // 50</code></pre>
+                </div>
+            </section>
+
+            <!-- STRATEGY -->
+            <section class="content-section">
+                <h3><i class="fas fa-chess"></i> Strategy</h3>
+                <p>
+                    O padrão <strong>Strategy</strong> permite encapsular diferentes
+                    algoritmos em classes separadas, permitindo a seleção dinâmica de um
+                    algoritmo específico em tempo de execução. Isso torna o sistema mais
+                    flexível e fácil de manter.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Strategy:</h4>
+                    <pre><code>// Estratégias de ordenação
+class SortStrategy {
+    sort(data) {
+        throw new Error("Método sort() deve ser implementado");
+    }
+}
+
+class BubbleSort extends SortStrategy {
+    sort(data) {
+        console.log("Ordenando com Bubble Sort");
+        return [...data].sort((a, b) => a - b);
+    }
+}
+
+class QuickSort extends SortStrategy {
+    sort(data) {
+        console.log("Ordenando com Quick Sort");
+        return [...data].sort((a, b) => a - b);
+    }
+}
+
+class MergeSort extends SortStrategy {
+    sort(data) {
+        console.log("Ordenando com Merge Sort");
+        return [...data].sort((a, b) => a - b);
+    }
+}
+
+// Contexto
+class TaskSorter {
+    constructor(strategy) {
+        this.strategy = strategy;
+    }
+
+    setStrategy(strategy) {
+        this.strategy = strategy;
+    }
+
+    sortTasks(tasks) {
+        return this.strategy.sort(tasks);
+    }
+}
+
+// Uso
+const tasks = [5, 2, 8, 1, 9];
+const sorter = new TaskSorter(new BubbleSort());
+console.log(sorter.sortTasks(tasks)); // [1, 2, 5, 8, 9]
+
+sorter.setStrategy(new QuickSort());
+console.log(sorter.sortTasks(tasks)); // [1, 2, 5, 8, 9]</code></pre>
+                </div>
+            </section>
+
+            <!-- DEPENDENCY INJECTION -->
+            <section class="content-section">
+                <h3><i class="fas fa-syringe"></i> Dependency Injection</h3>
+                <p>
+                    O padrão <strong>Dependency Injection</strong> permite injetar
+                    dependências em um objeto em vez de criá-las diretamente dentro dele.
+                    Isso torna o sistema mais flexível, pois as dependências podem ser
+                    facilmente substituídas ou modificadas sem impactar o código do objeto.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Dependency Injection:</h4>
+                    <pre><code>// Serviço de usuário
+class UserService {
+    constructor(repository) {
+        this.repository = repository;
+    }
+
+    getUser(id) {
+        return this.repository.findById(id);
+    }
+}
+
+// Repositórios
+class MongoRepository {
+    findById(id) {
+        return { id, name: "João", source: "MongoDB" };
+    }
+}
+
+class PostgresRepository {
+    findById(id) {
+        return { id, name: "João", source: "PostgreSQL" };
+    }
+}
+
+// Uso com injeção de dependência
+const mongoRepo = new MongoRepository();
+const userServiceMongo = new UserService(mongoRepo);
+console.log(userServiceMongo.getUser(1));
+
+const postgresRepo = new PostgresRepository();
+const userServicePostgres = new UserService(postgresRepo);
+console.log(userServicePostgres.getUser(1));</code></pre>
+                </div>
+            </section>
+
+            <!-- MODULE -->
+            <section class="content-section">
+                <h3><i class="fas fa-th-large"></i> Module</h3>
+                <p>
+                    O padrão <strong>Module</strong> consiste em dividir o código em módulos
+                    independentes, cada um responsável por uma funcionalidade específica do
+                    aplicativo. Esses módulos podem ser desenvolvidos separadamente e depois
+                    integrados ao aplicativo, facilitando a manutenção e a evolução do sistema.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Module:</h4>
+                    <pre><code>// Módulo de carrinho de compras
+const ShoppingCart = (() => {
+    let items = [];
+
+    return {
+        addItem(item) {
+            items.push(item);
+            console.log(`${item} adicionado ao carrinho`);
+        },
+        removeItem(item) {
+            const index = items.indexOf(item);
+            if (index > -1) {
+                items.splice(index, 1);
+                console.log(`${item} removido do carrinho`);
+            }
+        },
+        getItems() {
+            return [...items];
+        },
+        getTotal() {
+            return items.length;
+        }
+    };
+})();
+
+// Módulo de produtos
+const ProductModule = (() => {
+    let products = [];
+
+    return {
+        addProduct(product) {
+            products.push(product);
+        },
+        getProducts() {
+            return [...products];
+        },
+        getProductById(id) {
+            return products.find(p => p.id === id);
+        }
+    };
+})();
+
+// Uso
+ShoppingCart.addItem("Camisa");
+ShoppingCart.addItem("Calça");
+console.log(ShoppingCart.getItems()); // ["Camisa", "Calça"]</code></pre>
+                </div>
+            </section>
+
+            <!-- MVVM -->
+            <section class="content-section">
+                <h3><i class="fas fa-code-branch"></i> MVVM - Model-View-ViewModel</h3>
+                <p>
+                    O padrão <strong>Model-View-ViewModel (MVVM)</strong> permite a ligação
+                    entre a camada de visualização (View) e a camada de modelo de dados
+                    (Model) por meio de um objeto intermediário (ViewModel). O ViewModel atua
+                    como uma ponte entre a View e o Model, fornecendo os dados e
+                    comportamentos necessários para a interface de usuário.
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Características:</strong> O ViewModel também pode conter lógica
+                        adicional para manipulação dos dados e eventos relacionados à interface.
+                        Essa separação clara entre as responsabilidades facilita o
+                        desenvolvimento, a manutenção e o teste do código front-end.
+                    </p>
+                </div>
+            </section>
+
+            <!-- MVP -->
+            <section class="content-section">
+                <h3><i class="fas fa-user-tie"></i> MVP - Model-View-Presenter</h3>
+                <p>
+                    O padrão <strong>Model-View-Presenter (MVP)</strong> separa a lógica de
+                    apresentação da lógica de negócio por meio de um componente intermediário
+                    chamado Presenter. A View é responsável pela exibição dos dados ao usuário,
+                    o Model é responsável pela lógica de negócio e o Presenter atua como uma
+                    ponte entre a View e o Model, controlando a interação e o fluxo de dados.
+                </p>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Benefícios:</strong> Essa separação permite uma melhor
+                        organização e testabilidade do código, além de facilitar a manutenção
+                        e a evolução do sistema, pois as responsabilidades são claramente
+                        definidas e distribuídas entre os componentes. O MVP é amplamente
+                        utilizado em aplicações web e desktop que demandam uma separação clara
+                        entre a interface do usuário e a lógica de negócio.
+                    </p>
+                </div>
+            </section>
+
+            <!-- CONCLUSÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-flag-checkered"></i> Conclusão</h3>
+                <div class="highlight-box final">
+                    <p>
+                        <strong>Conclusão:</strong> A aplicação de padrões de projeto adequados
+                        na arquitetura de software front-end é essencial para melhorar a
+                        modularidade, a flexibilidade e a reusabilidade do código, facilitando
+                        a manutenção e evolução do sistema. Os padrões de projeto oferecem
+                        soluções comprovadas para problemas recorrentes no desenvolvimento de
+                        software e promovem a criação de arquiteturas mais modulares e flexíveis.
+                        Com a aplicação desses padrões, é possível criar sistemas front-end
+                        mais robustos, fáceis de manter e prontos para se adaptarem a novas
+                        exigências e necessidades do mercado.
+                    </p>
+                </div>
+            </section>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="page-navigation">
+                <a href="arquitetura.html" class="nav-btn prev"><i class="fas fa-arrow-left"></i> Arquitetura</a>
+                <a href="organizacao.html" class="nav-btn next">Organização <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Front-End Guide. Todos os direitos reservados.</p>
+            <p class="footer-tag">Desenvolvido para estudantes de tecnologia</p>
+        </div>
+    </footer>
+
+</body>
+</html>

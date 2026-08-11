@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html" class="active"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">04</span>
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript é uma linguagem de programação amplamente utilizada no
+                desenvolvimento web. Compreender seus fundamentos e aplicações é essencial
+                para criar aplicações web dinâmicas e interativas.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- PARTE 1: FUNDAMENTOS -->
+            <section class="content-section">
+                <h3><i class="fas fa-cubes"></i> Fundamentos do JavaScript</h3>
+                <p>
+                    JavaScript é uma linguagem de programação amplamente utilizada no
+                    desenvolvimento web. Compreender a <strong>sintaxe</strong>, a
+                    <strong>estrutura básica</strong> e os <strong>conceitos fundamentais</strong>
+                    do JavaScript é essencial para criar aplicações web dinâmicas e interativas.
+                </p>
+
+                <h4><i class="fas fa-terminal"></i> Sintaxe e Estrutura Básica</h4>
+                <p>
+                    A sintaxe do JavaScript é bastante semelhante a outras linguagens
+                    de programação, como C++ e Java. A estrutura básica de um programa
+                    JavaScript consiste em declarações, expressões e comentários.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Declarações:</strong> Instruções que executam ações,
+                        como declarar variáveis, criar funções e controlar o fluxo do programa.
+                    </li>
+                    <li>
+                        <strong>Expressões:</strong> Combinações de valores, operadores e
+                        chamadas de função que produzem um resultado.
+                    </li>
+                    <li>
+                        <strong>Comentários:</strong> Trechos de texto que não são executados
+                        pelo interpretador e servem para adicionar anotações e explicar o código.
+                    </li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Declarando Variáveis:</h4>
+                    <pre><code>// Declaração de variável (var)
+var nome = "João";
+
+// Declaração com let (escopo de bloco)
+let idade = 25;
+
+// Constante (não pode ser reatribuída)
+const PI = 3.14159;
+
+// Tipos de dados
+let numero = 42;          // Número
+let texto = "Olá";        // String
+let verdadeiro = true;    // Booleano
+let lista = [1, 2, 3];    // Array
+let objeto = {chave: "valor"}; // Objeto</code></pre>
+                    <p>
+                        <strong>Tipagem dinâmica:</strong> O JavaScript é uma linguagem de
+                        <strong>tipagem dinâmica</strong>, o que significa que não precisamos
+                        especificar o tipo de dado ao declarar uma variável.
+                    </p>
+                </div>
+
+                <h4><i class="fas fa-diagram-project"></i> Estruturas de Controle</h4>
+                <p>
+                    As estruturas de controle no JavaScript permitem controlar o fluxo de
+                    execução do programa. Podemos utilizar estruturas condicionais, como
+                    <code>if</code>, <code>else if</code> e <code>else</code>, para executar
+                    blocos de código diferentes dependendo de uma condição. Também podemos
+                    utilizar loops, como <code>for</code> e <code>while</code>, para repetir
+                    um bloco de código várias vezes.
+                </p>
+                <div class="example-box">
+                    <h4>Condicionais e Loops:</h4>
+                    <pre><code>// Estrutura condicional
+let idade = 18;
+if (idade >= 18) {
+    console.log("Maior de idade");
+} else {
+    console.log("Menor de idade");
+}
+
+// Loop for
+for (let i = 0; i < 5; i++) {
+    console.log("Número: " + i);
+}
+
+// Loop while
+let contador = 0;
+while (contador < 3) {
+    console.log("Contador: " + contador);
+    contador++;
+}
+
+// Switch
+let dia = "segunda";
+switch (dia) {
+    case "segunda":
+        console.log("Início da semana");
+        break;
+    case "sexta":
+        console.log("Fim da semana");
+        break;
+    default:
+        console.log("Meio da semana");
+}</code></pre>
+                </div>
+
+                <h4><i class="fas fa-function"></i> Funções Embutidas</h4>
+                <p>
+                    Além disso, o JavaScript possui uma variedade de funções embutidas que
+                    nos permitem realizar operações específicas. Por exemplo, a função
+                    <code>alert()</code> exibe uma caixa de diálogo com uma mensagem para o
+                    usuário, a função <code>prompt()</code> exibe uma caixa de diálogo para
+                    receber a entrada do usuário, e a função <code>console.log()</code>
+                    exibe uma mensagem no console do navegador.
+                </p>
+                <div class="function-grid">
+                    <article class="function-card">
+                        <h4>alert()</h4>
+                        <pre><code>alert("Mensagem de alerta!");</code></pre>
+                        <small>Exibe uma caixa de diálogo com uma mensagem</small>
+                    </article>
+                    <article class="function-card">
+                        <h4>prompt()</h4>
+                        <pre><code>let nome = prompt("Digite seu nome:");</code></pre>
+                        <small>Exibe uma caixa de diálogo para receber entrada</small>
+                    </article>
+                    <article class="function-card">
+                        <h4>console.log()</h4>
+                        <pre><code>console.log("Mensagem no console");</code></pre>
+                        <small>Exibe uma mensagem no console do navegador</small>
+                    </article>
+                    <article class="function-card">
+                        <h4>typeof</h4>
+                        <pre><code>typeof "texto"; // "string"</code></pre>
+                        <small>Retorna o tipo de um valor</small>
+                    </article>
+                </div>
+            </section>
+
+            <!-- PARTE 2: MANIPULAÇÃO DO DOM -->
+            <section class="content-section">
+                <h3><i class="fas fa-code"></i> Manipulação do DOM</h3>
+                <p>
+                    Para interagir com elementos HTML, o JavaScript utiliza o
+                    <strong>Document Object Model (DOM)</strong>. O DOM representa a
+                    estrutura do documento HTML como uma árvore de objetos, permitindo
+                    manipular os elementos, alterar seu conteúdo, estilo e comportamento.
+                </p>
+                <p>
+                    Podemos selecionar elementos HTML usando métodos como
+                    <code>getElementById()</code>, <code>getElementsByClassName()</code> e
+                    <code>querySelector()</code>, e então aplicar mudanças usando
+                    propriedades e métodos do DOM.
+                </p>
+                <div class="example-box">
+                    <h4>Selecionando e Manipulando Elementos:</h4>
+                    <pre><code>// Selecionar por ID
+let titulo = document.getElementById("meuTitulo");
+titulo.textContent = "Novo Título";
+titulo.style.color = "blue";
+
+// Selecionar por classe
+let itens = document.getElementsByClassName("item");
+for (let i = 0; i < itens.length; i++) {
+    itens[i].style.backgroundColor = "lightgray";
+}
+
+// Selecionar com querySelector
+let paragrafo = document.querySelector(".destaque");
+paragrafo.innerHTML = "Conteúdo <strong>modificado</strong>";
+paragrafo.classList.add("ativo");
+
+// Criar novo elemento
+let novoItem = document.createElement("li");
+novoItem.textContent = "Novo item da lista";
+document.querySelector("ul").appendChild(novoItem);</code></pre>
+                </div>
+            </section>
+
+            <!-- PARTE 3: PROGRAMAÇÃO ASSÍNCRONA -->
+            <section class="content-section">
+                <h3><i class="fas fa-clock"></i> Programação Assíncrona</h3>
+                <p>
+                    A programação assíncrona é uma parte fundamental do JavaScript. Podemos
+                    utilizar callbacks, promessas e a sintaxe async/await para lidar com
+                    operações assíncronas, como requisições AJAX, animações e manipulação
+                    de eventos.
+                </p>
+                <div class="async-grid">
+                    <article class="async-card">
+                        <h4>Callbacks</h4>
+                        <p>
+                            Funções que são passadas como argumentos para outras funções,
+                            permitindo que sejam chamadas de volta quando um determinado
+                            evento ocorrer ou quando um processo assíncrono for concluído.
+                        </p>
+                        <pre><code>function processar(callback) {
+    setTimeout(() => {
+        callback("Concluído!");
+    }, 2000);
+}
+
+processar((mensagem) => {
+    console.log(mensagem);
+});</code></pre>
+                    </article>
+                    <article class="async-card">
+                        <h4>Promessas</h4>
+                        <p>
+                            Objetos que representam a eventual conclusão ou falha de uma
+                            operação assíncrona. Permitem encadear operações com <code>then()</code>.
+                        </p>
+                        <pre><code>let promessa = new Promise((resolve, reject) => {
+    let sucesso = true;
+    if (sucesso) {
+        resolve("Operação bem-sucedida!");
+    } else {
+        reject("Erro na operação");
+    }
+});
+
+promessa
+    .then(resultado => console.log(resultado))
+    .catch(erro => console.log(erro));</code></pre>
+                    </article>
+                    <article class="async-card">
+                        <h4>Async/Await</h4>
+                        <p>
+                            Sintaxe que simplifica o código assíncrono, permitindo escrever
+                            operações assíncronas de forma mais concisa e legível, aguardando
+                            resultados com a palavra-chave <code>await</code>.
+                        </p>
+                        <pre><code>async function buscarDados() {
+    try {
+        let resposta = await fetch("https://api.exemplo.com/dados");
+        let dados = await resposta.json();
+        console.log(dados);
+        return dados;
+    } catch (erro) {
+        console.log("Erro na requisição:", erro);
+    }
+}
+
+// Uso
+buscarDados();</code></pre>
+                    </article>
+                </div>
+                <p>
+                    De modo geral, ao entender a sintaxe, a estrutura básica e os conceitos
+                    fundamentais do JavaScript, você estará preparado para utilizar essa
+                    linguagem de programação de forma efetiva no desenvolvimento de
+                    aplicações web. Com o JavaScript, é possível criar interações dinâmicas,
+                    manipular elementos HTML, controlar o fluxo do programa e lidar com
+                    operações assíncronas.
+                </p>
+            </section>
+
+            <!-- PARTE 4: APLICAÇÕES WEB -->
+            <section class="content-section">
+                <h3><i class="fas fa-globe"></i> JavaScript em Aplicações Web</h3>
+                <p>
+                    A capacidade de utilizar a linguagem de programação JavaScript de forma
+                    efetiva no desenvolvimento de aplicações web é essencial para criar
+                    sites e aplicações <strong>interativas</strong>, <strong>dinâmicas</strong>
+                    e <strong>responsivas</strong>.
+                </p>
+
+                <h4><i class="fas fa-hand-pointer"></i> Interação com o DOM</h4>
+                <p>
+                    Por meio do JavaScript, podemos selecionar elementos HTML, manipular
+                    seus atributos, estilos e conteúdo, criar eventos e responder a
+                    interações dos usuários. Isso possibilita a criação de funcionalidades
+                    como botões de clique, menus deslizantes, validação de formulários,
+                    entre outros.
+                </p>
+                <div class="example-box">
+                    <h4>Criando Eventos:</h4>
+                    <pre><code>// Botão de clique
+document.getElementById("btn").onclick = function() {
+    alert("Botão clicado!");
+};
+
+// Event listener (recomendado)
+document.getElementById("btn").addEventListener("click", function() {
+    console.log("Botão clicado com addEventListener");
+});
+
+// Menu deslizante
+document.querySelector(".menu-toggle").addEventListener("click", function() {
+    document.querySelector(".menu").classList.toggle("ativo");
+});
+
+// Evento de mouseover
+document.querySelector(".card").addEventListener("mouseover", function() {
+    this.style.transform = "scale(1.05)";
+});</code></pre>
+                </div>
+
+                <h4><i class="fas fa-check-circle"></i> Validação de Formulários</h4>
+                <p>
+                    Um exemplo prático de utilização do JavaScript é a validação de
+                    formulários em uma página web. Podemos utilizar eventos, como o evento
+                    de submissão de um formulário, para verificar se os campos foram
+                    preenchidos corretamente antes de enviar os dados ao servidor.
+                </p>
+                <div class="example-box">
+                    <h4>Validando um Formulário:</h4>
+                    <pre><code>document.getElementById("form").onsubmit = function(event) {
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let senha = document.getElementById("senha").value;
+
+    if (nome === "" || email === "" || senha === "") {
+        alert("Preencha todos os campos!");
+        event.preventDefault(); // Impede o envio
+        return false;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("E-mail inválido!");
+        event.preventDefault();
+        return false;
+    }
+
+    if (senha.length < 6) {
+        alert("A senha deve ter pelo menos 6 caracteres!");
+        event.preventDefault();
+        return false;
+    }
+
+    alert("Formulário enviado com sucesso!");
+};</code></pre>
+                </div>
+
+                <h4><i class="fas fa-images"></i> Carrosséis e Slideshows</h4>
+                <p>
+                    Outro exemplo é a criação de carrosséis ou slideshows em uma página web.
+                    Com JavaScript, podemos criar um carrossel de imagens que é capaz de
+                    exibir as imagens em sequência, com transições suaves e controles de
+                    navegação.
+                </p>
+                <div class="example-box">
+                    <h4>Criando um Carrossel de Imagens:</h4>
+                    <pre><code>let imagens = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"];
+let indice = 0;
+
+function mudarImagem(direcao) {
+    indice += direcao;
+    if (indice < 0) indice = imagens.length - 1;
+    if (indice >= imagens.length) indice = 0;
+    document.getElementById("slide").src = imagens[indice];
+}
+
+// Controles
+document.getElementById("proximo").addEventListener("click", function() {
+    mudarImagem(1);
+});
+
+document.getElementById("anterior").addEventListener("click", function() {
+    mudarImagem(-1);
+});
+
+// Auto-play (troca a cada 3 segundos)
+setInterval(function() {
+    mudarImagem(1);
+}, 3000);</code></pre>
+                </div>
+
+                <h4><i class="fas fa-cloud-upload-alt"></i> Requisições Assíncronas (AJAX)</h4>
+                <p>
+                    Além disso, o JavaScript permite a realização de requisições assíncronas
+                    ao servidor, o que possibilita a atualização de conteúdo de forma
+                    dinâmica, sem a necessidade de recarregar a página inteira.
+                </p>
+                <div class="example-box">
+                    <h4>Carregando Conteúdo Dinâmico:</h4>
+                    <pre><code>// Usando Fetch API (moderno)
+async function carregarPosts() {
+    try {
+        let resposta = await fetch("https://api.exemplo.com/posts");
+        if (!resposta.ok) {
+            throw new Error("Erro na requisição");
+        }
+        let dados = await resposta.json();
+
+        let container = document.getElementById("posts");
+        container.innerHTML = ""; // Limpa o conteúdo
+
+        dados.forEach(post => {
+            container.innerHTML += `
+                &lt;article class="post"&gt;
+                    &lt;h3&gt;${post.titulo}&lt;/h3&gt;
+                    &lt;p&gt;${post.conteudo}&lt;/p&gt;
+                    &lt;small&gt;Publicado em: ${post.data}&lt;/small&gt;
+                &lt;/article&gt;
+            `;
+        });
+    } catch (erro) {
+        console.log("Erro ao carregar:", erro);
+    }
+}
+
+// Carregar ao rolar a página (infinite scroll)
+let carregando = false;
+window.onscroll = function() {
+    if (carregando) return;
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+        carregando = true;
+        carregarPosts().finally(() => {
+            carregando = false;
+        });
+    }
+};
+
+// XMLHttpRequest (tradicional)
+function carregarDadosXML() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.exemplo.com/dados");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let dados = JSON.parse(xhr.responseText);
+            console.log(dados);
+        }
+    };
+    xhr.send();
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- CONCLUSÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-flag-checkered"></i> Conclusão</h3>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Dominar o JavaScript</strong> é fundamental para se destacar
+                        como desenvolvedor web e entregar soluções de alta qualidade e
+                        usabilidade aos usuários. O JavaScript oferece recursos poderosos
+                        para manipulação de elementos HTML, interação com o usuário,
+                        validação de formulários, atualização de conteúdo dinamicamente e
+                        integração com frameworks e bibliotecas modernas.
+                    </p>
+                    <p>
+                        A capacidade de utilizar a linguagem de programação JavaScript de
+                        forma efetiva no desenvolvimento de aplicações web permite a criação
+                        de sites e aplicações interativas, dinâmicas e responsivas.
+                    </p>
+                </div>
+            </section>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="page-navigation">
+                <a href="responsivo.html" class="nav-btn prev"><i class="fas fa-arrow-left"></i> Layouts Responsivos</a>
+                <a href="frameworks.html" class="nav-btn next">Frameworks <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Front-End Guide. Todos os direitos reservados.</p>
+            <p class="footer-tag">Desenvolvido para estudantes de tecnologia</p>
+        </div>
+    </footer>
+
+</body>
+</html>

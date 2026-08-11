@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organização de Código - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html" class="active"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">08</span>
+            <h2>Estratégias de Organização de Código Front-end</h2>
+            <p>
+                A implementação de uma estratégia eficiente e escalável de organização de
+                código front-end é fundamental para o desenvolvimento de aplicações web
+                de qualidade.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-info-circle"></i> Introdução</h3>
+                <p>
+                    Ao adotar padrões de nomenclatura consistentes, é possível melhorar a
+                    legibilidade e a manutenibilidade do código, facilitando a colaboração
+                    entre os membros da equipe de desenvolvimento e garantindo uma base
+                    sólida para a evolução do projeto.
+                </p>
+            </section>
+
+            <!-- PADRÕES DE NOMENCLATURA -->
+            <section class="content-section">
+                <h3><i class="fas fa-tag"></i> Padrões de Nomenclatura</h3>
+                <p>
+                    Um dos principais aspectos dessa estratégia é estabelecer uma convenção
+                    de nomenclatura clara e padronizada para as classes, IDs, variáveis e
+                    demais elementos do código. Isso permite que outros desenvolvedores
+                    compreendam facilmente a estrutura e a finalidade de cada componente.
+                </p>
+
+                <h4><i class="fas fa-cube"></i> BEM - Block, Element, Modifier</h4>
+                <p>
+                    Um exemplo de nomenclatura com o padrão <strong>BEM</strong> seria:
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Nomenclatura BEM:</h4>
+                    <pre><code>/* Block (Bloco) */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+}
+
+/* Element (Elemento) */
+.button__text {
+    font-weight: bold;
+}
+
+/* Modifier (Modificador) */
+.button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button--large {
+    padding: 15px 30px;
+    font-size: 1.2em;
+}</code></pre>
+                    <p>
+                        <strong>Explicação:</strong> <code>.button</code> é o bloco principal,
+                        <code>.button__text</code> é um elemento interno, e
+                        <code>.button--disabled</code> e <code>.button--large</code> são
+                        modificadores de estilo.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Classes vs IDs:</strong> IDs são atributos utilizados para
+                        identificar e estilizar elementos HTML de forma única. Classes são
+                        usadas para agrupar elementos semânticos e aplicar estilos comuns a
+                        eles. Ambos são importantes para a manipulação e estilização de
+                        elementos na construção de interfaces web.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ESTRUTURA DE DIRETÓRIOS -->
+            <section class="content-section">
+                <h3><i class="fas fa-folder-tree"></i> Estrutura de Diretórios</h3>
+                <p>
+                    É essencial estabelecer uma estrutura de diretórios bem organizada, que
+                    facilite a localização e o agrupamento dos arquivos do projeto. Uma
+                    estrutura bem definida permite separar de forma lógica os diferentes
+                    tipos de arquivos, facilitando a navegação e a manutenção do código.
+                </p>
+
+                <div class="directory-tree">
+                    <h4>Exemplo de Estrutura de Diretórios:</h4>
+                    <div class="tree-content">
+                        <pre><code>projeto-frontend/
+├── css/
+│   ├── main.css
+│   ├── components.css
+│   └── layout.css
+├── js/
+│   ├── main.js
+│   ├── components/
+│   │   ├── button.js
+│   │   └── modal.js
+│   └── utils/
+│       ├── validators.js
+│       └── helpers.js
+├── img/
+│   ├── icons/
+│   └── backgrounds/
+├── fonts/
+├── components/
+│   ├── button/
+│   ├── card/
+│   └── navbar/
+├── pages/
+│   ├── home.html
+│   ├── about.html
+│   └── contact.html
+└── utils/
+    ├── constants.js
+    └── config.js</code></pre>
+                    </div>
+                    <ul>
+                        <li><strong>css/</strong> - Arquivos CSS organizados por função</li>
+                        <li><strong>js/</strong> - Arquivos JavaScript divididos em módulos</li>
+                        <li><strong>img/</strong> - Imagens utilizadas no projeto</li>
+                        <li><strong>fonts/</strong> - Fontes personalizadas</li>
+                        <li><strong>components/</strong> - Componentes reutilizáveis</li>
+                        <li><strong>pages/</strong> - Páginas do projeto</li>
+                        <li><strong>utils/</strong> - Utilitários e funções auxiliares</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Convenção de nomenclatura:</strong> Utilizar nomes descritivos
+                        e significativos para os arquivos, evitando caracteres especiais e
+                        espaços em branco. Uma convenção comum é utilizar o padrão
+                        <strong>kebab-case</strong>, no qual as palavras são separadas por hífens
+                        (ex: <code>meu-arquivo.js</code>).
+                    </p>
+                </div>
+            </section>
+
+            <!-- MODULARIZAÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-th-large"></i> Modularização do Código</h3>
+                <p>
+                    A modularização do código consiste em dividir a funcionalidade em unidades
+                    autônomas e coesas, conhecidas como <strong>módulos</strong>. Cada módulo
+                    é responsável por uma parte específica do sistema e pode ser desenvolvido,
+                    testado e mantido de forma independente.
+                </p>
+
+                <div class="example-box">
+                    <h4>Exemplo de Modularização:</h4>
+                    <pre><code>// modulo-validacao.js
+export function validarEmail(email) {
+    return email.includes('@') && email.includes('.');
+}
+
+export function validarSenha(senha) {
+    return senha.length >= 6;
+}
+
+// modulo-usuario.js
+import { validarEmail, validarSenha } from './modulo-validacao.js';
+
+export function criarUsuario(nome, email, senha) {
+    if (!validarEmail(email)) {
+        throw new Error('Email inválido');
+    }
+    if (!validarSenha(senha)) {
+        throw new Error('Senha muito curta');
+    }
+    return { nome, email, senha };
+}
+
+// main.js
+import { criarUsuario } from './modulo-usuario.js';
+
+try {
+    const usuario = criarUsuario('João', 'joao@email.com', '123456');
+    console.log('Usuário criado:', usuario);
+} catch (error) {
+    console.error('Erro:', error.message);
+}</code></pre>
+                </div>
+
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <h4><i class="fas fa-recycle"></i> Reutilização</h4>
+                        <p>Módulos podem ser reaproveitados em diferentes partes do sistema</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h4><i class="fas fa-wrench"></i> Manutenibilidade</h4>
+                        <p>Alterações são restritas a um módulo específico</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h4><i class="fas fa-arrow-up"></i> Escalabilidade</h4>
+                        <p>Facilita a adição de novas funcionalidades</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h4><i class="fas fa-eye"></i> Legibilidade</h4>
+                        <p>Código mais compreensível com responsabilidades bem definidas</p>
+                    </article>
+                    <article class="benefit-card">
+                        <h4><i class="fas fa-vial"></i> Testabilidade</h4>
+                        <p>Módulos podem ser testados de forma isolada</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- COMPONENTES REUTILIZÁVEIS -->
+            <section class="content-section">
+                <h3><i class="fas fa-puzzle-piece"></i> Componentes Reutilizáveis</h3>
+                <p>
+                    Um exemplo prático de modularização do código é a utilização de
+                    <strong>componentes reutilizáveis</strong>. Um componente é um módulo que
+                    encapsula uma parte específica da interface de usuário e suas
+                    funcionalidades associadas.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Componente Reutilizável:</h4>
+                    <pre><code>// Componente Button (React)
+const Button = ({ children, variant, onClick, disabled }) => {
+    const classes = `btn btn-${variant} ${disabled ? 'btn-disabled' : ''}`;
+
+    return (
+        &lt;button
+            className={classes}
+            onClick={onClick}
+            disabled={disabled}
+        &gt;
+            {children}
+        &lt;/button&gt;
+    );
+};
+
+// Uso do componente em diferentes partes
+&lt;Button variant="primary" onClick={handleSave}&gt;
+    Salvar
+&lt;/Button&gt;
+
+&lt;Button variant="danger" onClick={handleDelete}&gt;
+    Excluir
+&lt;/Button&gt;
+
+&lt;Button variant="success" onClick={handleConfirm} disabled={!isValid}&gt;
+    Confirmar
+&lt;/Button&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- CONCLUSÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-flag-checkered"></i> Conclusão</h3>
+                <div class="highlight-box final">
+                    <p>
+                        <strong>Conclusão:</strong> A implementação de uma estratégia de
+                        organização de código front-end eficiente e escalável é fundamental
+                        para garantir a qualidade, a manutenibilidade e a reutilização do
+                        código em aplicações web. Ao adotar padrões de nomenclatura consistentes,
+                        uma estrutura de diretórios bem definida e a modularização do código,
+                        é possível obter uma base sólida para o desenvolvimento de aplicações
+                        web de alta qualidade.
+                    </p>
+                </div>
+            </section>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="page-navigation">
+                <a href="padroes-projeto.html" class="nav-btn prev"><i class="fas fa-arrow-left"></i> Padrões de Projeto</a>
+                <a href="desempenho.html" class="nav-btn next">Desempenho <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Front-End Guide. Todos os direitos reservados.</p>
+            <p class="footer-tag">Desenvolvido para estudantes de tecnologia</p>
+        </div>
+    </footer>
+
+</body>
+</html>

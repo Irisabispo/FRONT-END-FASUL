@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Avançado - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html" class="active"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">02</span>
+            <h2>Técnicas Avançadas com CSS</h2>
+            <p>
+                Ao utilizar técnicas avançadas de estilização com CSS, podemos elevar
+                o design e a aparência visual de uma página da web a um novo nível.
+                O CSS é a linguagem de estilo que complementa o HTML.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-paint-brush"></i> O Poder do CSS</h3>
+                <p>
+                    O CSS é a linguagem de estilo que complementa o HTML, permitindo a
+                    definição de estilos, cores, layout e posicionamento dos elementos
+                    presentes na página. Existem várias técnicas avançadas de estilização
+                    com CSS que podemos explorar para criar páginas da web visualmente
+                    atraentes e com uma experiência de usuário mais envolvente.
+                </p>
+            </section>
+
+            <!-- SELETORES AVANÇADOS -->
+            <section class="content-section">
+                <h3><i class="fas fa-crosshairs"></i> Seletores Avançados</h3>
+                <p>
+                    O CSS oferece diversos seletores para segmentar elementos específicos
+                    de uma página. Além dos seletores básicos (como seletores de tag,
+                    classe e ID), podemos utilizar seletores avançados, como seletores de
+                    descendentes, seletores de filhos diretos, seletores de irmãos
+                    adjacentes, entre outros. Esses seletores permitem maior controle e
+                    especificidade na estilização dos elementos.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplos de Seletores:</h4>
+                    <pre><code>/* Seletor de classe */
+.classe {
+    color: red;
+}
+
+/* Seletor de filho direto */
+pai > filho {
+    font-weight: bold;
+}
+
+/* Seletor de descendente */
+pai descendente {
+    background: blue;
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- ESTILOS CONDICIONAIS -->
+            <section class="content-section">
+                <h3><i class="fas fa-code-branch"></i> Estilos Condicionais</h3>
+                <p>
+                    Com o CSS, podemos aplicar estilos condicionais com base em determinadas
+                    condições. Isso nos permite adaptar a aparência da página de acordo com
+                    diferentes circunstâncias, como a presença de determinado atributo ou
+                    classe em um elemento.
+                </p>
+                <div class="example-box">
+                    <h4>Estilo baseado em atributo:</h4>
+                    <pre><code>[atributo="valor"] {
+    background-color: yellow;
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- ANIMAÇÕES -->
+            <section class="content-section">
+                <h3><i class="fas fa-play-circle"></i> Animações e Transições</h3>
+                <p>
+                    O CSS possibilita a criação de animações e transições suaves,
+                    permitindo adicionar movimento e interatividade aos elementos da página.
+                    Podemos definir propriedades como duração, atraso, tipo de animação e
+                    curvas de timing, criando efeitos visuais impressionantes.
+                </p>
+                <div class="example-box">
+                    <h4>Animação com keyframes:</h4>
+                    <pre><code>@keyframes exemplo {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+elemento {
+    animation: exemplo 2s ease-in-out infinite;
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- FLEXBOX E GRID -->
+            <section class="content-section">
+                <h3><i class="fas fa-arrows-alt"></i> Flexbox e Grid</h3>
+                <p>
+                    O CSS oferece poderosas técnicas de layout, como o Flexbox e o Grid.
+                    Com esses recursos, podemos criar layouts responsivos e flexíveis,
+                    posicionando os elementos de forma precisa e adaptável a diferentes
+                    dispositivos e tamanhos de tela.
+                </p>
+                <div class="flex-grid-demo">
+                    <article class="demo-card">
+                        <h4>Flexbox</h4>
+                        <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    flex: 1;
+}</code></pre>
+                    </article>
+                    <article class="demo-card">
+                        <h4>Grid</h4>
+                        <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.item {
+    grid-column: span 2;
+}</code></pre>
+                    </article>
+                </div>
+            </section>
+
+            <!-- MEDIA QUERIES -->
+            <section class="content-section">
+                <h3><i class="fas fa-mobile-screen"></i> Media Queries</h3>
+                <p>
+                    As Media Queries permitem adaptar a aparência da página com base nas
+                    características do dispositivo em que está sendo exibida. Podemos
+                    definir estilos específicos para diferentes tamanhos de tela,
+                    resoluções ou orientações, proporcionando uma experiência responsiva
+                    aos usuários.
+                </p>
+                <div class="example-box">
+                    <h4>Adaptando a telas menores:</h4>
+                    <pre><code>@media screen and (max-width: 600px) {
+    elemento {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    elemento {
+        padding: 20px;
+    }
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- CONSIDERAÇÕES -->
+            <section class="content-section">
+                <h3><i class="fas fa-exclamation-triangle"></i> Considerações Importantes</h3>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Compatibilidade:</strong> Ao utilizar técnicas avançadas de
+                        estilização, é importante considerar a compatibilidade com os diferentes
+                        navegadores e dispositivos. Algumas propriedades podem não ser suportadas
+                        por versões mais antigas de navegadores, portanto, é necessário realizar
+                        testes e fornecer fallbacks ou alternativas para garantir uma experiência
+                        consistente.
+                    </p>
+                </div>
+                <p>
+                    No geral, ao utilizar técnicas avançadas de estilização com CSS, podemos
+                    elevar o design da página a um patamar mais profissional e atraente,
+                    tornando-a mais envolvente e agradável aos usuários. A combinação do HTML,
+                    CSS e técnicas de estilização avançadas nos permite criar páginas da web
+                    visualmente impactantes e esteticamente agradáveis.
+                </p>
+            </section>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="page-navigation">
+                <a href="estrutura-html.html" class="nav-btn prev"><i class="fas fa-arrow-left"></i> Estrutura HTML</a>
+                <a href="responsivo.html" class="nav-btn next">Layouts Responsivos <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Front-End Guide. Todos os direitos reservados.</p>
+            <p class="footer-tag">Desenvolvido para estudantes de tecnologia</p>
+        </div>
+    </footer>
+
+</body>
+</html>

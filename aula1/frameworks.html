@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks Front-end - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html" class="active"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">05</span>
+            <h2>Frameworks e Bibliotecas Front-end</h2>
+            <p>
+                Aprender a utilizar frameworks e bibliotecas front-end permitirá que você
+                desenvolva aplicações web de alta qualidade, otimize o tempo de
+                desenvolvimento e tenha acesso a uma vasta comunidade de desenvolvedores
+                e recursos.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-info-circle"></i> Introdução</h3>
+                <p>
+                    Frameworks e bibliotecas front-end desempenham um papel crucial no
+                    desenvolvimento de aplicações web modernas e eficientes. Entre as opções
+                    mais populares, destacam-se o <strong>React</strong>, o
+                    <strong>Angular</strong> e o <strong>Vue.js</strong>.
+                </p>
+                <p>
+                    Essa habilidade será um diferencial em sua carreira e proporcionará uma
+                    base sólida para a construção de projetos web mais sofisticados.
+                </p>
+            </section>
+
+            <!-- REACT -->
+            <section class="content-section framework-section">
+                <h3><i class="fab fa-react"></i> React</h3>
+                <p>
+                    O React é uma biblioteca JavaScript de código aberto mantida pelo
+                    Facebook. É conhecido por sua abordagem de <strong>componentização</strong>,
+                    que permite dividir a interface do usuário em pequenos componentes
+                    reutilizáveis. Esses componentes podem ser compostos para construir
+                    interfaces complexas, tornando o código mais modular e fácil de manter.
+                </p>
+
+                <div class="framework-features">
+                    <ul>
+                        <li><strong>Componentização:</strong> Interface dividida em componentes reutilizáveis</li>
+                        <li><strong>Virtual DOM:</strong> Melhora a eficiência e o desempenho das atualizações</li>
+                        <li><strong>Ecossistema robusto:</strong> React Router, Redux e outras ferramentas</li>
+                        <li><strong>JSX:</strong> Sintaxe que combina HTML com JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Exemplo de Componente React:</h4>
+                    <pre><code>import React from 'react';
+
+// Componente de item da lista
+const TaskItem = ({ task }) => {
+    return <li>{task}</li>;
+};
+
+// Componente principal da lista
+const TaskList = ({ tasks }) => {
+    return (
+        <ul>
+            {tasks.map((task, index) => (
+                <TaskItem key={index} task={task} />
+            ))}
+        </ul>
+    );
+};
+
+// Componente de aplicação
+const App = () => {
+    const tarefas = ["Estudar React", "Criar projeto", "Fazer deploy"];
+
+    return (
+        <div>
+            <h1>Minhas Tarefas</h1>
+            <TaskList tasks={tarefas} />
+        </div>
+    );
+};
+
+export default App;</code></pre>
+                    <p>
+                        <strong>Explicação:</strong> O componente <code>TaskList</code> recebe um array
+                        de tarefas e mapeia cada uma para criar instâncias do componente
+                        <code>TaskItem</code>. A propriedade <code>key</code> identifica cada item
+                        de forma única. O React utiliza o <strong>Virtual DOM</strong> para
+                        atualizar apenas as partes necessárias da interface.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Vantagens do React:</strong> O virtual DOM reduz a quantidade
+                        de manipulações no DOM, resultando em uma aplicação mais rápida e
+                        responsiva. O ecossistema robusto inclui bibliotecas como React Router
+                        para navegação e Redux para gerenciamento de estado previsível e
+                        escalável.
+                    </p>
+                    <p>
+                        <strong>Curva de aprendizado:</strong> O React possui uma curva de
+                        aprendizado inicial e requer conhecimento básico de JavaScript. Para
+                        maximizar os benefícios do React, é recomendável estudar sua
+                        documentação oficial, seguir boas práticas de desenvolvimento e buscar
+                        exemplos e tutoriais disponíveis na comunidade.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ANGULAR -->
+            <section class="content-section framework-section">
+                <h3><i class="fab fa-angular"></i> Angular</h3>
+                <p>
+                    O Angular é um framework JavaScript mantido pelo Google, conhecido por
+                    sua abordagem baseada em <strong>componentes</strong>, onde a interface
+                    do usuário é dividida em componentes reutilizáveis que podem ser
+                    combinados para criar interfaces complexas, resultando em um código
+                    mais modular e de fácil manutenção.
+                </p>
+
+                <div class="framework-features">
+                    <ul>
+                        <li><strong>Componentização:</strong> Código modular e de fácil manutenção</li>
+                        <li><strong>Recursos avançados:</strong> Injeção de dependências, roteamento e gerenciamento de estado</li>
+                        <li><strong>TypeScript:</strong> Utiliza TypeScript para desenvolvimento</li>
+                        <li><strong>Framework completo:</strong> Solução all-in-one para aplicações</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>Exemplo de Componente Angular:</h4>
+                    <pre><code>import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-user-form',
+    templateUrl: './user-form.component.html',
+    styleUrls: ['./user-form.component.css']
+})
+export class UserFormComponent {
+    name: string = '';
+    email: string = '';
+    password: string = '';
+
+    onSubmit() {
+        // Lógica para enviar os dados do formulário para o servidor
+        console.log('Nome:', this.name);
+        console.log('Email:', this.email);
+        console.log('Senha:', this.password);
+
+        // Aqui poderíamos fazer uma requisição HTTP
+        alert('Formulário enviado com sucesso!');
+    }
+}
+
+// Template HTML (user-form.component.html)
+// &lt;form (ngSubmit)="onSubmit()"&gt;
+//     &lt;input [(ngModel)]="name" placeholder="Nome"&gt;
+//     &lt;input [(ngModel)]="email" placeholder="Email"&gt;
+//     &lt;input [(ngModel)]="password" type="password" placeholder="Senha"&gt;
+//     &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+// &lt;/form&gt;</code></pre>
+                    <p>
+                        <strong>Explicação:</strong> O componente <code>UserFormComponent</code>
+                        contém propriedades para armazenar os valores dos campos e o método
+                        <code>onSubmit</code> para enviar os dados. A anotação <code>@Component</code>
+                        define o seletor, template e estilos do componente. O Angular utiliza
+                        <strong>TypeScript</strong> para desenvolvimento.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Recursos do Angular:</strong> Além da componentização, oferece
+                        injeção de dependências, roteamento e gerenciamento

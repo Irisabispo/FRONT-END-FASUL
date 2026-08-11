@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts Responsivos - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html" class="active"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">03</span>
+            <h2>Layouts Responsivos e Design Fluido</h2>
+            <p>
+                Criar layouts responsivos e design fluido é essencial para garantir uma
+                experiência de usuário consistente e agradável em diferentes dispositivos
+                e tamanhos de tela.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-info-circle"></i> Introdução</h3>
+                <p>
+                    A integração entre HTML, CSS e princípios de design responsivo nos
+                    permite construir páginas da web que se adaptam de forma inteligente
+                    e elegante a qualquer ambiente de visualização. Layouts responsivos e
+                    com design fluido referem-se a abordagens de design e desenvolvimento
+                    que se adaptam e ajustam automaticamente a diferentes tamanhos de tela
+                    e dispositivos.
+                </p>
+            </section>
+
+            <!-- MEDIA QUERIES -->
+            <section class="content-section">
+                <h3><i class="fas fa-mobile-screen-button"></i> Media Queries</h3>
+                <p>
+                    As Media Queries são uma ferramenta essencial para tornar um layout
+                    responsivo. Com o CSS, podemos definir regras específicas para diferentes
+                    faixas de largura de tela ou outros recursos do dispositivo. Isso nos
+                    permite adaptar o layout e os estilos com base nas características do
+                    dispositivo, proporcionando uma experiência de usuário adequada.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Media Query:</h4>
+                    <pre><code>@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- SISTEMAS DE GRID -->
+            <section class="content-section">
+                <h3><i class="fas fa-table"></i> Sistemas de Grid</h3>
+                <p>
+                    O uso de sistemas de grid ajuda a organizar o conteúdo da página em
+                    colunas e linhas, facilitando a criação de layouts fluidos e responsivos.
+                    Frameworks populares, como Bootstrap e Foundation, oferecem sistemas de
+                    grid robustos e personalizáveis, que simplificam a criação de layouts
+                    flexíveis.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Grid (Bootstrap):</h4>
+                    <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;!-- Conteúdo da coluna 1 --&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;!-- Conteúdo da coluna 2 --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- FLEXBOX -->
+            <section class="content-section">
+                <h3><i class="fas fa-arrows-alt-h"></i> Flexbox</h3>
+                <p>
+                    O Flexbox é um recurso poderoso do CSS que permite criar layouts
+                    flexíveis e responsivos com facilidade. Com o Flexbox, podemos controlar
+                    o posicionamento, o dimensionamento e a ordem dos elementos em um
+                    contêiner, adaptando-se às diferentes configurações de tela.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Flexbox:</h4>
+                    <pre><code>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 1 1 200px;
+    margin: 10px;
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- UNIDADES RELATIVAS -->
+            <section class="content-section">
+                <h3><i class="fas fa-ruler"></i> Unidades Relativas</h3>
+                <p>
+                    Ao definir tamanhos e proporções de elementos, é aconselhável empregar
+                    unidades de medida relativas, como porcentagem ou "em". Essas unidades
+                    possibilitam que os elementos se adaptem ao tamanho do contêiner pai ou
+                    ao tamanho da fonte, assegurando layouts fluidos e proporcionais.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Unidades Relativas:</h4>
+                    <pre><code>.container {
+    width: 90%;
+    max-width: 1200

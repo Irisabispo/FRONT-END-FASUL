@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desempenho e Otimização - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html" class="active"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">09</span>
+            <h2>Boas Práticas de Desempenho e Otimização</h2>
+            <p>
+                Reproduzir boas práticas de desempenho e otimização no código front-end é
+                essencial para garantir a melhor experiência possível aos usuários de um
+                aplicativo web.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-info-circle"></i> Introdução</h3>
+                <p>
+                    A velocidade de carregamento, a responsividade e a eficiência geral do
+                    aplicativo são aspectos fundamentais para o sucesso de uma aplicação.
+                    Para alcançar esses objetivos, é importante utilizar técnicas e
+                    estratégias que visam otimizar o código e reduzir o tempo de carregamento.
+                </p>
+            </section>
+
+            <!-- MINIFICAÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-compress-alt"></i> Minificação de Arquivos</h3>
+                <p>
+                    A <strong>minificação</strong> consiste em remover espaços em branco,
+                    quebras de linha e comentários desnecessários do código, reduzindo o
+                    tamanho dos arquivos. Isso resulta em um tempo de carregamento mais
+                    rápido, já que os arquivos são transferidos do servidor para o cliente
+                    de forma mais eficiente.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Minificação (Antes/Depois):</h4>
+                    <pre><code>// Antes da minificação
+function calcularTotal(precos, desconto) {
+    let total = 0;
+    for (let i = 0; i < precos.length; i++) {
+        total = total + precos[i];
+    }
+    return total * (1 - desconto);
+}
+
+// Depois da minificação
+function calcularTotal(p,d){let t=0;for(let i=0;i&lt;p.length;i++){t+=p[i]}return t*(1-d)}</code></pre>
+                    <p>
+                        <strong>Benefícios:</strong> Redução do tamanho do arquivo (até 70%),
+                        transferência mais rápida, e dificulta a leitura do código por terceiros.
+                    </p>
+                </div>
+            </section>
+
+            <!-- COMPRESSÃO DE RECURSOS -->
+            <section class="content-section">
+                <h3><i class="fas fa-file-archive"></i> Compressão de Recursos</h3>
+                <p>
+                    A <strong>compressão de recursos</strong> reduz o tamanho de imagens,
+                    scripts e folhas de estilo sem comprometer sua qualidade ou funcionalidade.
+                    Existem várias técnicas de compressão disponíveis.
+                </p>
+
+                <h4><i class="fas fa-image"></i> Compressão de Imagens</h4>
+                <p>
+                    O <strong>JPEG</strong> é conhecido por sua capacidade de comprimir
+                    imagens de alta qualidade com perda mínima de detalhes, resultando em
+                    arquivos menores. O <strong>PNG</strong> suporta compressão sem perda de
+                    qualidade e preserva a transparência dos elementos.
+                </p>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Dica prática:</strong> Utilize formatos modernos como WebP
+                        para imagens, que oferecem compressão superior sem perda de qualidade.
+                        Ferramentas como ImageOptim, TinyPNG e Squoosh podem ajudar na
+                        compressão de imagens.
+                    </p>
+                </div>
+            </section>
+
+            <!-- LAZY LOADING -->
+            <section class="content-section">
+                <h3><i class="fas fa-spinner"></i> Lazy Loading</h3>
+                <p>
+                    O <strong>lazy loading</strong> é uma técnica que consiste em carregar
+                    apenas os recursos necessários no momento certo, à medida que o usuário
+                    navega pela página. Isso significa que imagens, vídeos ou outros elementos
+                    não essenciais não são carregados imediatamente, economizando tempo e
+                    largura de banda.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Lazy Loading com Intersection Observer:</h4>
+                    <pre><code>// Lazy loading de imagens
+document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll("img[data-src]");
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute("data-src");
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+});
+
+// Lazy loading com scroll manual
+function lazyLoadOnScroll() {
+    const lazyImages = document.querySelectorAll("img[data-src]");
+    lazyImages.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        if (rect.top &lt; window.innerHeight && rect.bottom > 0) {
+            img.src = img.dataset.src;
+            img.removeAttribute("data-src");
+        }
+    });
+}
+
+document.addEventListener("scroll", lazyLoadOnScroll);</code></pre>
+                </div>
+                <p>
+                    O lazy loading é particularmente útil em páginas com muito conteúdo
+                    visual, como galerias de imagens ou feeds de mídia social. Ao adotar o
+                    lazy loading, é possível reduzir significativamente o tempo de
+                    carregamento inicial e melhorar a experiência do usuário.
+                </p>
+            </section>
+
+            <!-- CACHING -->
+            <section class="content-section">
+                <h3><i class="fas fa-database"></i> Caching</h3>
+                <p>
+                    O <strong>caching</strong> consiste em armazenar em cache os recursos
+                    estáticos do aplicativo, como imagens, scripts e folhas de estilo. Ao
+                    armazenar esses recursos em cache no navegador do usuário, é possível
+                    reduzir o número de requisições ao servidor, pois o navegador pode
+                    recuperar os recursos diretamente do cache local.
+                </p>
+                <div class="example-box">
+                    <h4>Controle de Cache (HTTP Headers):</h4>
+                    <pre><code># Configuração de cache no servidor (Apache)
+&lt;IfModule mod_headers.c&gt;
+    # Cache de imagens (1 ano)
+    &lt;FilesMatch "\.(jpg|jpeg|png|gif|webp)$"&gt;
+        Header set Cache-Control "max-age=31536000, public"
+    &lt;/FilesMatch&gt;
+
+    # Cache de CSS e JavaScript (1 mês)
+    &lt;FilesMatch "\.(css|js)$"&gt;
+        Header set Cache-Control "max-age=2592000, public"
+    &lt;/FilesMatch&gt;
+
+    # Não cache para HTML
+    &lt;FilesMatch "\.(html|htm)$"&gt;
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+    &lt;/FilesMatch&gt;
+&lt;/IfModule&gt;</code></pre>
+                </div>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Benefícios:</strong> O caching resulta em um tempo de
+                        carregamento mais rápido e reduz a carga no servidor. Além disso, melhora
+                        a experiência do usuário em visitas subsequentes ao site, uma vez que os
+                        recursos já estão em cache e não precisam ser baixados novamente.
+                    </p>
+                </div>
+            </section>
+
+            <!-- REDUÇÃO DE REQUISIÇÕES -->
+            <section class="content-section">
+                <h3><i class="fas fa-arrow-down"></i> Redução de Requisições ao Servidor</h3>
+                <p>
+                    Ao reduzir o número de requisições ao servidor, é possível diminuir o
+                    tempo de carregamento do aplicativo, já que cada requisição demanda um
+                    tempo para estabelecer a conexão e receber a resposta. Além disso, ao
+                    minimizar a quantidade de requisições, também se reduz a quantidade de
+                    dados trafegados.
+                </p>
+
+                <h4><i class="fas fa-merge"></i> Combinação de Arquivos</h4>
+                <p>
+                    A técnica de <strong>combinar e minificar</strong> arquivos consiste em
+                    agrupar múltiplos arquivos CSS ou JavaScript em um único arquivo,
+                    reduzindo assim o número de requisições necessárias para obtê-los.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Combinação de Arquivos:</h4>
+                    <pre><code># Antes: múltiplas requisições
+&lt;link rel="stylesheet" href="reset.css"&gt;
+&lt;link rel="stylesheet" href="layout.css"&gt;
+&lt;link rel="stylesheet" href="components.css"&gt;
+
+# Depois: uma única requisição
+&lt;link rel="stylesheet" href="styles.min.css"&gt;
+
+# Antes: múltiplas requisições
+&lt;script src="header.js"&gt;&lt;/script&gt;
+&lt;script src="slider.js"&gt;&lt;/script&gt;
+&lt;script src="modal.js"&gt;&lt;/script&gt;
+
+# Depois: uma única requisição
+&lt;script src="scripts.min.js"&gt;&lt;/script&gt;</code></pre>
+                </div>
+
+                <h4><i class="fas fa-images"></i> Sprites de Imagem</h4>
+                <p>
+                    Um <strong>sprite</strong> é uma imagem única que contém várias imagens
+                    menores, como ícones ou elementos gráficos utilizados no aplicativo. Em
+                    vez de fazer uma requisição para cada imagem separadamente, é possível
+                    utilizar apenas o sprite, e por meio de CSS, posicionar e exibir somente
+                    a parte da imagem necessária.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo de Sprite CSS:</h4>
+                    <pre><code>/* Sprite: icons.png com 4 ícones */
+.icon {
+    background-image: url('icons.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.icon-home {
+    background-position: 0 0;
+}
+
+.icon-user {
+    background-position: -32px 0;
+}
+
+.icon-settings {
+    background-position: -64px 0;
+}
+
+.icon-logout {
+    background-position: -96px 0;
+}
+
+/* Uso no HTML */
+&lt;span class="icon icon-home"&gt;&lt;/span&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- CONCLUSÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-flag-checkered"></i> Conclusão</h3>
+                <div class="highlight-box final">
+                    <p>
+                        <strong>Conclusão:</strong> A reprodução de boas práticas de desempenho
+                        e otimização no código front-end é fundamental para melhorar a
+                        velocidade de carregamento, a responsividade e a eficiência geral de
+                        um aplicativo web. A utilização de técnicas como minificação de
+                        arquivos, compressão de recursos, lazy loading, caching e redução do
+                        número de requisições ao servidor contribui para criar aplicativos web
+                        mais rápidos, responsivos e eficientes, proporcionando uma navegação
+                        mais ágil e agradável aos usuários.
+                    </p>
+                </div>
+            </section>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="page-navigation">
+                <a href="organizacao.html" class="nav-btn prev"><i class="fas fa-arrow-left"></i> Organização</a>
+                <a href="index.html" class="nav-btn next"><i class="fas fa-home"></i> Início</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Front-End Guide. Todos os direitos reservados.</p>
+            <p class="footer-tag">Desenvolvido para estudantes de tecnologia</p>
+        </div>
+    </footer>
+
+</body>
+</html>

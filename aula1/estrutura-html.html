@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura HTML - Front-End Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>&lt;/&gt; Front-End</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="estrutura-html.html" class="active"><i class="fas fa-code"></i> HTML</a>
+                <a href="css-avancado.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a href="responsivo.html"><i class="fas fa-mobile-alt"></i> Responsivo</a>
+                <a href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a href="frameworks.html"><i class="fas fa-cubes"></i> Frameworks</a>
+                <a href="arquitetura.html"><i class="fas fa-project-diagram"></i> Arquitetura</a>
+                <a href="padroes-projeto.html"><i class="fas fa-puzzle-piece"></i> Padrões</a>
+                <a href="organizacao.html"><i class="fas fa-folder-tree"></i> Organização</a>
+                <a href="desempenho.html"><i class="fas fa-rocket"></i> Desempenho</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge">01</span>
+            <h2>Estrutura Básica do HTML</h2>
+            <p>
+                A habilidade de aplicar corretamente a estrutura do HTML permite criar
+                páginas web que atendem aos padrões modernos e seguem as melhores práticas
+                de desenvolvimento front-end.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main class="page-content">
+        <div class="container">
+
+            <!-- INTRODUÇÃO -->
+            <section class="content-section">
+                <h3><i class="fas fa-info-circle"></i> Introdução</h3>
+                <p>
+                    Ao aplicar a estrutura básica do HTML, as tags e os elementos essenciais
+                    na construção de uma página web, estamos dando os primeiros passos para
+                    a criação de um site funcional e bem organizado. O HTML é a linguagem de
+                    marcação utilizada para estruturar e organizar o conteúdo de uma página.
+                </p>
+                <p>
+                    A habilidade de aplicar corretamente a estrutura do HTML e utilizar
+                    técnicas avançadas de estilização com CSS permite que você crie
+                    páginas web que atendam aos padrões modernos e sigam as melhores práticas
+                    de desenvolvimento front-end.
+                </p>
+            </section>
+
+            <!-- ESTRUTURA FUNDAMENTAL -->
+            <section class="content-section">
+                <h3><i class="fas fa-sitemap"></i> Estrutura Fundamental</h3>
+                <p>
+                    A estrutura básica do HTML é composta por algumas tags fundamentais
+                    que devem estar presentes em todas as páginas.
+                </p>
+                <div class="example-box">
+                    <h4>Exemplo da Estrutura Básica:</h4>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Conteúdo da Página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    <p>
+                        <strong>Explicação:</strong> A tag <code>&lt;!DOCTYPE html&gt;</code> define o
+                        tipo de documento como HTML5. <code>&lt;html&gt;</code> delimita o documento.
+                        <code>&lt;head&gt;</code> contém informações da página e <code>&lt;body&gt;</code>
+                        o conteúdo visível.
+                    </p>
+                </div>
+            </section>
+
+            <!-- TAGS ESSENCIAIS -->
+            <section class="content-section">
+                <h3><i class="fas fa-tags"></i> Tags e Elementos Essenciais</h3>
+                <p>
+                    Além da estrutura básica, existem várias tags e elementos essenciais
+                    que podemos utilizar na construção de uma página da web.
+                </p>
+                <div class="tags-grid">
+                    <article class="tag-card">
+                        <h4>Títulos</h4>
+                        <p><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></p>
+                        <small>&lt;h1&gt; é o título principal e &lt;h6&gt; o menor subtítulo</small>
+                    </article>
+                    <article class="tag-card">
+                        <h4>Parágrafos</h4>
+                        <p><code>&lt;p&gt;</code></p>
+                        <small>Cria parágrafos de texto na página</small>
+                    </article>
+                    <article class="tag-card">
+                        <h4>Listas</h4>
+                        <p><code>&lt;ul&gt;</code> e <code>&lt;ol&gt;</code></p>
+                        <small><code>&lt;ul&gt;</code> lista não ordenada, <code>&lt;ol&gt;</code> ordenada</small>
+                    </article>
+                    <article class="tag-card">
+                        <h4>Links</h4>
+                        <p><code>&lt;a href="url"&gt;</code></p>
+                        <small>O atributo <code>href</code> define o endereço do link</small>
+                    </article>
+                    <article class="tag-card">
+                        <h4>Imagens</h4>
+                        <p><code>&lt;img src="" alt=""&gt;</code></p>
+                        <small>O atributo <code>src</code> define o caminho da imagem</small>
+                    </article>
+                    <article class="tag-card">
+                        <h4>Tabelas</h4>
+                        <p><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code></p>
+                        <small><code>&lt;tr&gt;</code> linha, <code>&lt;td&gt;</code> célula</small>
+                    </article>
+                    <article class="tag-card">
+                        <h4>Formulários</h4>
+                        <p><code>&lt;form&gt;</code>, <code>&lt;input&gt;</code></p>
+                        <small>Coleta informações dos usuários</small>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SEMÂNTICA -->
+            <section class="content-section highlight-section">
+                <h3><i class="fas fa-book-open"></i> Semântica</h3>
+                <div class="highlight-box">
+                    <p>
+                        <strong>Semântica</strong> refere-se ao uso apropriado de elementos HTML
+                        para atribuir significado e estrutura correta ao conteúdo. Ao aplicar
+                        semântica, os elementos HTML são escolhidos com base em seu significado
+                        e propósito, tornando o código mais legível para humanos e máquinas,
+                        além de melhorar a acessibilidade e a indexação pelos mecanismos de busca.
+                    </p>
+                </div>
+                <p>
+                    Ao aplicar corretamente a estrutura básica do HTML, as tags e os elementos
+                    essenciais, estamos criando uma base sólida para a construção de uma
+                    página da web. Com o uso adequado do HTML, podemos estruturar o conteúdo,
+                    tornando-o acessível e bem-organizado. Isso facilita a navegação dos
+                    usuários, melhora a experiência do usuário e contribui para um melhor
+                    posicionamento nos resultados de busca.
+                </p>
+            </section>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="page-navigation">
+                <a href="index.html" class="nav-btn prev"><i class="fas fa-arrow-left"></i> Início</a>
+                <a href="css-avancado.html" class="nav-btn next">CSS Avançado <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Front-End Guide. Todos os direitos reservados.</p>
+            <p class="footer-tag">Desenvolvido para estudantes de tecnologia</p>
+        </div>
+    </footer>
+
+</body>
+</html>
